@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".week1.ui.mypage.MyPageActivity">
+    tools:context=".week1.mypage.MyPageActivity">
 
     <ImageView
         android:id="@+id/my_page_profile_image"
@@ -12,7 +12,7 @@
         android:layout_height="100dp"
         android:layout_marginTop="60dp"
 
-        android:src="@drawable/myFace"
+        android:src="@drawable/myface"
 
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"

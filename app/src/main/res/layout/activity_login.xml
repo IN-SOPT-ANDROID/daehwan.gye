@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".week1.ui.login.LoginActivity">
+    tools:context=".week1.login.LoginActivity">
 
     <TextView
         android:id="@+id/tv_title"
@@ -27,7 +27,8 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="32dp"
 
-        android:text="아이디"
+        android:text="@string/id"
+        android:textSize="15dp"
         android:textStyle="bold"
 
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +52,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
 
-        android:text="비밀번호"
+        android:text="@string/password"
+        android:textSize="15dp"
         android:textStyle="bold"
 
         app:layout_constraintStart_toStartOf="@+id/tv_id"
