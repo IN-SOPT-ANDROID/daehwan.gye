@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">INSOPTAndroidPractice</string>
+    <string name="prompt_id">아이디를 입력해주세요.</string>
+    <string name="prompt_password">비밀번호를 입력해주세요.</string>
+    <string name="prompt_mbti">MBTI를 입력해주세요.</string>
+    <string name="mbti">MBTI</string>
+    <string name="password">패스워드</string>
+    <string name="id">아이디</string>
 </resources>
