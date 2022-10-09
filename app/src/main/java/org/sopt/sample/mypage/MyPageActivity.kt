@@ -1,10 +1,10 @@
-package org.sopt.sample.week1.mypage
+package org.sopt.sample.mypage
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import org.sopt.sample.R
 import org.sopt.sample.databinding.ActivityMyPageBinding
-import org.sopt.sample.week1.common.Constants
+import org.sopt.sample.common.Constants
 
 class MyPageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyPageBinding

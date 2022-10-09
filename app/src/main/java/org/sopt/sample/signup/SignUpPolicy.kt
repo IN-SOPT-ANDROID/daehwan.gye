@@ -1,7 +1,7 @@
-package org.sopt.sample.week1.signup
+package org.sopt.sample.signup
 
 import org.sopt.sample.databinding.ActivitySignUpBinding
-import org.sopt.sample.week1.common.Mbti
+import org.sopt.sample.common.Mbti
 
 class SignUpPolicy(val idMin: Int, val idMax: Int, val pwMin: Int, val pwMax: Int) {
 

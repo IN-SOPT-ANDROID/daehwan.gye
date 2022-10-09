@@ -1,13 +1,13 @@
-package org.sopt.sample.week1.signup
+package org.sopt.sample.signup
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import org.sopt.sample.databinding.ActivitySignUpBinding
-import org.sopt.sample.week1.common.Constants
-import org.sopt.sample.week1.common.Mbti
-import org.sopt.sample.week1.login.LoginActivity
+import org.sopt.sample.common.Constants
+import org.sopt.sample.common.Mbti
+import org.sopt.sample.login.LoginActivity
 
 class SignUpActivity : AppCompatActivity() {
 

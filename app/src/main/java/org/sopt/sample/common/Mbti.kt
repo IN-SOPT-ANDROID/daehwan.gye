@@ -1,4 +1,4 @@
-package org.sopt.sample.week1.common
+package org.sopt.sample.common
 
 enum class Mbti {
     INTJ,

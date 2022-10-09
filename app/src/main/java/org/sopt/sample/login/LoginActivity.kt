@@ -1,14 +1,14 @@
-package org.sopt.sample.week1.login
+package org.sopt.sample.login
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import org.sopt.sample.databinding.ActivityLoginBinding
-import org.sopt.sample.week1.common.Constants
-import org.sopt.sample.week1.common.Mbti
-import org.sopt.sample.week1.mypage.MyPageActivity
-import org.sopt.sample.week1.signup.SignUpActivity
+import org.sopt.sample.common.Constants
+import org.sopt.sample.common.Mbti
+import org.sopt.sample.mypage.MyPageActivity
+import org.sopt.sample.signup.SignUpActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
