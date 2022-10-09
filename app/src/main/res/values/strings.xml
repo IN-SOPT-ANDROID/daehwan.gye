@@ -8,4 +8,6 @@
     <string name="id">아이디</string>
     <string name="login">LOGIN</string>
     <string name="signup">SIGNUP</string>
+    <string name="name">Name</string>
+    <string name="body">Body</string>
 </resources>
