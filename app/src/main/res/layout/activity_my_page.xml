@@ -7,7 +7,7 @@
     tools:context=".week1.mypage.MyPageActivity">
 
     <ImageView
-        android:id="@+id/my_page_profile_image"
+        android:id="@+id/iv_my_page_profile"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginTop="60dp"
@@ -20,49 +20,49 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/my_page_name_key"
+        android:id="@+id/tv_my_page_name_key"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="12dp"
         android:layout_marginLeft="40dp"
         android:text="이름: "
 
-        app:layout_constraintEnd_toStartOf="@id/my_page_name_value"
-        app:layout_constraintStart_toStartOf="@+id/my_page_profile_image"
-        app:layout_constraintTop_toBottomOf="@+id/my_page_profile_image" />
+        app:layout_constraintEnd_toStartOf="@id/tv_my_page_name_value"
+        app:layout_constraintStart_toStartOf="@+id/iv_my_page_profile"
+        app:layout_constraintTop_toBottomOf="@+id/iv_my_page_profile" />
 
     <TextView
-        android:id="@+id/my_page_name_value"
+        android:id="@+id/tv_my_page_name_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="12dp"
         android:layout_marginRight="40dp"
 
-        app:layout_constraintEnd_toEndOf="@id/my_page_profile_image"
-        app:layout_constraintStart_toEndOf="@id/my_page_name_key"
-        app:layout_constraintTop_toBottomOf="@+id/my_page_profile_image" />
+        app:layout_constraintEnd_toEndOf="@id/iv_my_page_profile"
+        app:layout_constraintStart_toEndOf="@id/tv_my_page_name_key"
+        app:layout_constraintTop_toBottomOf="@+id/iv_my_page_profile" />
 
     <TextView
-        android:id="@+id/my_page_mbti_key"
+        android:id="@+id/tv_my_page_mbti_key"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="12dp"
         android:layout_marginLeft="40dp"
         android:text="MBTI: "
 
-        app:layout_constraintEnd_toStartOf="@id/my_page_mbti_value"
-        app:layout_constraintStart_toStartOf="@+id/my_page_profile_image"
-        app:layout_constraintTop_toBottomOf="@+id/my_page_name_key" />
+        app:layout_constraintEnd_toStartOf="@id/tv_my_page_mbti_value"
+        app:layout_constraintStart_toStartOf="@+id/iv_my_page_profile"
+        app:layout_constraintTop_toBottomOf="@+id/tv_my_page_name_key" />
 
     <TextView
-        android:id="@+id/my_page_mbti_value"
+        android:id="@+id/tv_my_page_mbti_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="12dp"
         android:layout_marginRight="40dp"
 
-        app:layout_constraintEnd_toEndOf="@id/my_page_profile_image"
-        app:layout_constraintStart_toEndOf="@id/my_page_mbti_key"
-        app:layout_constraintTop_toBottomOf="@+id/my_page_name_value" />
+        app:layout_constraintEnd_toEndOf="@id/iv_my_page_profile"
+        app:layout_constraintStart_toEndOf="@id/tv_my_page_mbti_key"
+        app:layout_constraintTop_toBottomOf="@+id/tv_my_page_name_value" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

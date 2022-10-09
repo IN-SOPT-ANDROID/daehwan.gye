@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import org.sopt.sample.databinding.ActivityLoginBinding
 import org.sopt.sample.week1.common.Constants
-import org.sopt.sample.week1.common.MBTI
+import org.sopt.sample.week1.common.Mbti
 import org.sopt.sample.week1.mypage.MyPageActivity
 import org.sopt.sample.week1.signup.SignUpActivity
 
@@ -14,7 +14,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var insertedId: String
     private lateinit var insertedPassword: String
-    private lateinit var insertedMbti: MBTI
+    private lateinit var insertedMbti: Mbti
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
 
             // for version 28+
             insertedMbti = (intent.getSerializableExtra(Constants.MBTI.value)
-                ?: throw java.lang.IllegalArgumentException("mbti expected")) as MBTI
+                ?: throw java.lang.IllegalArgumentException("mbti expected")) as Mbti
         }
 
 
@@ -59,6 +59,7 @@ class LoginActivity : AppCompatActivity() {
                 toMyPageView.putExtra(Constants.ID.value, insertedId)
                 toMyPageView.putExtra(Constants.MBTI.value, insertedMbti)
                 startActivity(toMyPageView)
+                finish()
             } else {
                 // login failed
                 Toast.makeText(this.applicationContext, "로그인 정보가 올바르지 못합니다.", Toast.LENGTH_SHORT)

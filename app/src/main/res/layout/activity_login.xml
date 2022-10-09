@@ -79,20 +79,20 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="32dp"
 
-        android:text="LOGIN"
+        android:text="@string/login"
         android:textStyle="bold"
 
         app:layout_constraintStart_toStartOf="@id/et_password_insertion"
         app:layout_constraintTop_toBottomOf="@id/et_password_insertion" />
 
     <Button
-        android:id="@+id/btn_signUp"
+        android:id="@+id/btn_sign_up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="20dp"
 
-        android:text="SIGNUP"
+        android:text="@string/signup"
         android:textStyle="bold"
 
         app:layout_constraintStart_toStartOf="@id/btn_login"

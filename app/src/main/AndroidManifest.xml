@@ -15,16 +15,10 @@
         <activity
             android:name=".week1.mypage.MyPageActivity"
             android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
         </activity>
         <activity
             android:name=".week1.signup.SignUpActivity"
             android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
         </activity>
         <activity
             android:name=".week1.login.LoginActivity"

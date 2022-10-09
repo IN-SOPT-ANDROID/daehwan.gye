@@ -11,14 +11,10 @@ class MyPageActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_page)
-
         binding = ActivityMyPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.myPageNameValue.setText(intent.getStringExtra(Constants.ID.value))
-        binding.myPageMbtiValue.setText(
-            intent.getSerializableExtra(Constants.MBTI.value).toString()
-        )
+        binding.tvMyPageNameValue.text = intent.getStringExtra(Constants.ID.value)
+        binding.tvMyPageMbtiValue.text = intent.getSerializableExtra(Constants.MBTI.value).toString()
     }
 }
