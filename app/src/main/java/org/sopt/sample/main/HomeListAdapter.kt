@@ -45,4 +45,4 @@ class HomeListAdapter(context: Context) : RecyclerView.Adapter<HomeListAdapter.H
 }
 
 private fun <E> List<E>.listChanged(toBe: List<E>) =
-    this.size == toBe.size && this.containsAll(toBe)
+    !(this.size == toBe.size && this.containsAll(toBe))

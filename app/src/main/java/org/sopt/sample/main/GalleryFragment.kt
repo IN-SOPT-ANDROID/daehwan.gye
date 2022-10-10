@@ -5,8 +5,7 @@ import android.view.ViewGroup
 import org.sopt.sample.common.FragmentTemplate
 import org.sopt.sample.databinding.FragmentGalleryBinding
 
-class GalleryFragment : FragmentTemplate() {
-    private var _binding: FragmentGalleryBinding? = null
+class GalleryFragment : FragmentTemplate<FragmentGalleryBinding>() {
 
     override fun initBinding(
         inflater: LayoutInflater,
@@ -16,9 +15,6 @@ class GalleryFragment : FragmentTemplate() {
         _binding = FragmentGalleryBinding.inflate(inflater, container, attachToParent)
     }
 
-    override fun getBinding() = requireNotNull(_binding)
-
-    override fun removeBinding() {
-        _binding = null;
-    }
+    override fun getBinding(): FragmentGalleryBinding =
+        requireNotNull(_binding) as FragmentGalleryBinding
 }
