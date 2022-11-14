@@ -9,10 +9,7 @@ import retrofit2.Retrofit
 
 object ApiFactory {
     val retrofit by lazy {
-        Retrofit.Builder()
-            .baseUrl(ApiUrl.SOPT.asHttp())
-            .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
-            .build()
+        ApiUrlRetrofit.SOPT.retrofit()
     }
 
     inline fun <reified T> create(): T = retrofit.create(T::class.java)

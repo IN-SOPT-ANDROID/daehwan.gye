@@ -2,38 +2,27 @@ package org.sopt.sample.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import org.sopt.sample.ApiPool
+import org.sopt.sample.Response
 import org.sopt.sample.databinding.ActivityLoginBinding
-import org.sopt.sample.common.Constants
-import org.sopt.sample.common.Mbti
 import org.sopt.sample.mypage.MyPageActivity
 import org.sopt.sample.signup.SignUpActivity
+import java.util.function.Consumer
 
 class LoginActivity : AppCompatActivity() {
+    private val loginApi = ApiPool.loginApi
+
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var insertedId: String
-    private lateinit var insertedPassword: String
-    private lateinit var insertedMbti: Mbti
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // intent 에 값이 로그인 정보가 존재하는 경우
-        if (intent.hasExtra(Constants.ID.value) && intent.hasExtra(Constants.PASSWORD.value)) {
-            insertedId = intent.getStringExtra(Constants.ID.value)
-                ?: throw java.lang.IllegalArgumentException("id expected")
-            insertedPassword = intent.getStringExtra(Constants.PASSWORD.value)
-                ?: throw java.lang.IllegalArgumentException("password expected")
-
-            // for version 28+
-            insertedMbti = (intent.getSerializableExtra(Constants.MBTI.value)
-                ?: throw java.lang.IllegalArgumentException("mbti expected")) as Mbti
-        }
-
 
         // click signUp
         binding.btnSignUp.setOnClickListener {
@@ -42,29 +31,110 @@ class LoginActivity : AppCompatActivity() {
         }
 
         // click login
-        binding.btnLogin.setOnClickListener {
+        val function: (v: View) -> Unit = {
 
-            // 회원가입된 정보가 로그인 페이지로 전달되지 않은 경우
-            if (!intent.hasExtra(Constants.ID.value) || !intent.hasExtra(Constants.PASSWORD.value)) {
-                Toast.makeText(this.applicationContext, "등록되지 않은 회원입니다.", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
+            loginApi.login(
+                LoginRequest(
+                    binding.etIdInsertion.text.toString(),
+                    binding.etPasswordInsertion.text.toString()
+                )
+                // call back
+            ).enqueue(
+                LoginCallBack(
 
-            if (binding.etIdInsertion.text.toString() == insertedId &&
-                binding.etPasswordInsertion.text.toString() == insertedPassword
-            ) {
-                // login success
-                Toast.makeText(this.applicationContext, "로그인에 성공하셨습니다.", Toast.LENGTH_SHORT).show()
-                val toMyPageView = Intent(this, MyPageActivity::class.java)
-                toMyPageView.putExtra(Constants.ID.value, insertedId)
-                toMyPageView.putExtra(Constants.MBTI.value, insertedMbti)
-                startActivity(toMyPageView)
-                finish()
-            } else {
-                // login failed
-                Toast.makeText(this.applicationContext, "로그인 정보가 올바르지 못합니다.", Toast.LENGTH_SHORT)
-                    .show()
-            }
+                    // 200 success 에 대한 행위 정의 //
+                    {
+                        // 200 alert
+                        Toast.makeText(this.applicationContext, "로그인에 성공하셨습니다.", Toast.LENGTH_SHORT)
+                            .show()
+
+                        val toMyPageView = Intent(this, MyPageActivity::class.java)
+
+                        startActivity(toMyPageView)
+                        finish()
+                    },
+
+                    // TODO : 코드 중복 해결해야함
+                    // -> 공통부분 추상화 예정
+
+                    // Client error code 에 대한 행위 정의 //
+                    { clientError ->
+                        if (clientError.toString().startsWith("4")) {
+                            when (clientError) {
+                                400 -> {
+                                    Toast.makeText(
+                                        this@LoginActivity,
+                                        "올바르지 못한 형태의 값이 입력되었습니다.",
+                                        Toast.LENGTH_SHORT
+                                    )
+                                        .show()
+                                }
+                                403 -> {
+                                    Toast.makeText(
+                                        this@LoginActivity,
+                                        "로그인 정보가 올바르지 못합니다. ",
+                                        Toast.LENGTH_SHORT
+                                    )
+                                        .show()
+                                }
+                                404 -> {
+                                    Toast.makeText(
+                                        this@LoginActivity,
+                                        "올바르지 못한 주소로의 요청입니다. 관리자에게 문의하세요. ",
+                                        Toast.LENGTH_SHORT
+                                    )
+                                        .show()
+                                }
+                                else -> {
+                                    Toast.makeText(
+                                        this@LoginActivity,
+                                        "정의되지 않은 클라이언트 오류입니다. 관리자에게 문의하세요. ",
+                                        Toast.LENGTH_SHORT
+                                    )
+                                        .show()
+                                }
+                            }
+                        }
+                    },
+
+                    // server error code 에 대한 행위 정의 //
+                    { serverError ->
+                        if (serverError.toString().startsWith("5")) {
+                            when (serverError) {
+                                500 -> {
+                                    Toast.makeText(
+                                        this@LoginActivity,
+                                        "서버 내부적인 오류입니다. 관리자에게 문의하세요.",
+                                        Toast.LENGTH_SHORT
+                                    )
+                                        .show()
+                                }
+                                else -> {
+                                    Log.e(
+                                        "INVALID STATUS ERROR",
+                                        "status : ${serverError}" +
+                                                "body : 정의되지 않은 에러코드입니다."
+                                    )
+                                }
+                            }
+                        }
+                    },
+
+                    // redirect code 에 대한 행위 정의 //
+                    { redirect ->
+                        if (redirect.toString().startsWith("3"))
+                            when (redirect) {
+                                // TODO : about redirect
+                            }
+                    }
+                )
+            )
         }
+        binding.btnLogin.setOnClickListener(function)
     }
+
+    private class LoginCallBack(
+        success: () -> Unit,
+        vararg failures: Consumer<Int>
+    ) : Response<LoginResponse>(success, *failures)
 }
