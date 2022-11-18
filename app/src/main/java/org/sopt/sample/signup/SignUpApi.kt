@@ -26,12 +26,20 @@ data class SignUpRequest(
 
 @Serializable
 data class SignUpResponse(
-    @Header("status")
+    @SerialName("status")
     val status: Int,
-    @SerialName("success")
-    val success: Boolean,
     @SerialName("message")
     val message: String,
-    @SerialName("data")
-    val data: String
+    @SerialName("newUser")
+    val user: User
+)
+
+@Serializable
+data class User(
+    val id: Int,
+    val name: String,
+    val profileImage: String?,
+    val bio: String?,
+    val email: String,
+    val password: String
 )
