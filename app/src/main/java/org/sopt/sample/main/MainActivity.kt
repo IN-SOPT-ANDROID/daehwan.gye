@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import org.sopt.sample.R
 import org.sopt.sample.databinding.ActivityMainBinding
+import org.sopt.sample.main.gallery.GalleryFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
