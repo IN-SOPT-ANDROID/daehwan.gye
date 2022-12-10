@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">INSOPTAndroidPractice</string>
+    <string name="txt_id_sign_in">아이디</string>
+    <string name="txt_pw_sign_in">비밀번호</string>
+    <string name="btn_sign_in">로그인</string>
+    <string name="btn_sign_up">회원가입</string>
 </resources>

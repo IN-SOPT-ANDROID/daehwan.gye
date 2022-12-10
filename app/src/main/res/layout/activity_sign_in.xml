@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.view.greet.SignInActivity">
+
+    <ImageView
+        android:id="@+id/img_logo_sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="60dp"
+
+        android:src="@drawable/logo"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_id_sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+
+        android:text="@string/txt_id_sign_in"
+        android:textSize="20sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_logo_sign_in" />
+
+    <EditText
+        android:id="@+id/et_id_sign_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/et_sign_in"
+
+        app:layout_constraintStart_toStartOf="@id/txt_id_sign_in"
+        app:layout_constraintTop_toBottomOf="@id/txt_id_sign_in" />
+
+    <TextView
+        android:id="@+id/txt_pw_sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+
+        android:text="@string/txt_pw_sign_in"
+        android:textSize="20sp"
+
+        app:layout_constraintStart_toStartOf="@id/txt_id_sign_in"
+        app:layout_constraintTop_toBottomOf="@id/et_id_sign_in" />
+
+    <EditText
+        android:id="@+id/et_pw_sign_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="10dp"
+
+        android:background="@drawable/et_sign_in"
+
+        app:layout_constraintStart_toStartOf="@id/txt_pw_sign_in"
+        app:layout_constraintTop_toBottomOf="@id/txt_pw_sign_in" />
+
+    <Button
+        android:id="@+id/btn_sign_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="60dp"
+
+        android:text="@string/btn_sign_in"
+
+        app:layout_constraintTop_toBottomOf="@id/et_pw_sign_in" />
+
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/btn_sign_up"
+
+        app:layout_constraintTop_toBottomOf="@id/btn_sign_in" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
