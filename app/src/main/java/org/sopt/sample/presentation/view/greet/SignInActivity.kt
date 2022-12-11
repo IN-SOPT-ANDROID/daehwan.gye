@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import org.sopt.sample.R
 import org.sopt.sample.databinding.ActivitySignInBinding
 import org.sopt.sample.presentation.interrupt.greet.SignInNetworkInterrupt
+import org.sopt.sample.system.util.editTextContent
 
 class SignInActivity : AppCompatActivity() {
 
@@ -19,8 +20,8 @@ class SignInActivity : AppCompatActivity() {
         // 로그인 버튼 클릭 시
         binding.btnSignIn.setOnClickListener {
             val result = SignInNetworkInterrupt(
-                id = findViewById(R.id.et_id_sign_in),
-                pw = findViewById(R.id.et_pw_sign_in)
+                id = editTextContent(binding.etIdSignIn),
+                pw = editTextContent(binding.etPwSignIn)
             ).sync()
 
             if (result.isSucceed()) {

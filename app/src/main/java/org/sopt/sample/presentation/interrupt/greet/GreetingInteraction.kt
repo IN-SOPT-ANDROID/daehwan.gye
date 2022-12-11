@@ -14,3 +14,18 @@ class SignInNetworkInterrupt(
         TODO("Not yet implemented")
     }
 }
+
+class SignUpNetworkInterrupt(
+    private val nickname: String,
+    private val email: String,
+    private val password: String,
+    private val passwordValidation: String
+) : NetworkInterrupt {
+    override fun sync(): NetworkInterrupt.NetworkResult {
+        TODO("Not yet implemented")
+    }
+
+    override fun async() {
+        TODO("Not yet implemented")
+    }
+}

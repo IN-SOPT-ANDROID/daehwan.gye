@@ -6,4 +6,195 @@
     android:layout_height="match_parent"
     tools:context=".presentation.view.greet.SignUpActivity">
 
+    <TextView
+        android:id="@+id/txt_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="25dp"
+
+        android:layout_marginTop="100dp"
+        android:text="회원가입"
+        android:textSize="30sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/block_sign_up_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="40dp"
+
+        android:background="@drawable/block_sign_in_corner"
+        app:layout_constraintTop_toBottomOf="@id/txt_sign_up"
+
+        >
+
+        <TextView
+            android:id="@+id/txt_sign_up_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="5dp"
+
+            android:text="닉네임"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_id_sign_up_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+
+            android:background="@drawable/et_sign_in"
+            android:hint="anv"
+            android:paddingBottom="10dp"
+            android:textSize="20sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_sign_up_nickname" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/block_sign_up_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="10dp"
+
+        android:background="@drawable/block_sign_in_corner"
+        app:layout_constraintTop_toBottomOf="@id/block_sign_up_nickname"
+
+        >
+
+        <TextView
+            android:id="@+id/txt_sign_up_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="5dp"
+
+            android:text="이메일 (example@gmail.com)"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_id_sign_up_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+
+            android:background="@drawable/et_sign_in"
+            android:hint="anv"
+            android:paddingBottom="10dp"
+            android:textSize="20sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_sign_up_email" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/block_sign_up_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="10dp"
+
+        android:background="@drawable/block_sign_in_corner"
+        app:layout_constraintTop_toBottomOf="@id/block_sign_up_email"
+
+        >
+
+        <TextView
+            android:id="@+id/txt_sign_up_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="5dp"
+
+            android:text="비밀번호 (8자 이상)"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_id_sign_up_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+
+            android:background="@drawable/et_sign_in"
+            android:hint="anv"
+            android:paddingBottom="10dp"
+            android:textSize="20sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_sign_up_password" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/block_sign_up_password_validation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="10dp"
+
+        android:background="@drawable/block_sign_in_corner"
+        app:layout_constraintTop_toBottomOf="@id/block_sign_up_password"
+
+        >
+
+        <TextView
+            android:id="@+id/txt_sign_up_password_validation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="5dp"
+
+            android:text="비밀번호 확인"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_id_sign_up_password_validation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+
+            android:background="@drawable/et_sign_in"
+            android:hint="anv"
+            android:paddingBottom="10dp"
+            android:textSize="20sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_sign_up_password_validation" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="60dp"
+        android:paddingVertical="20dp"
+
+        android:text="회원 가입"
+        android:textSize="20sp"
+
+        app:layout_constraintTop_toBottomOf="@id/block_sign_up_password_validation" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

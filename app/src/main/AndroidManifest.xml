@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.INSOPTAndroidPractice"
         tools:targetApi="31">
-
+        <activity
+            android:name=".presentation.view.greet.SignUpActivity"
+            android:exported="false" />
         <activity
             android:name=".presentation.view.greet.SignInActivity"
             android:exported="true" />
