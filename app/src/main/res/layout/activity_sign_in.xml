@@ -6,66 +6,101 @@
     android:layout_height="match_parent"
     tools:context=".presentation.view.greet.SignInActivity">
 
-    <ImageView
-        android:id="@+id/img_logo_sign_in"
+    <TextView
+        android:id="@+id/txt_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="100dp"
 
-        android:src="@drawable/logo"
+        android:text="@string/txt_sign_in"
+        android:textSize="30sp"
 
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txt_id_sign_in"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
 
-        android:text="@string/txt_id_sign_in"
-        android:textSize="20sp"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_logo_sign_in" />
-
-    <EditText
-        android:id="@+id/et_id_sign_in"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="25dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/et_sign_in"
-
-        app:layout_constraintStart_toStartOf="@id/txt_id_sign_in"
-        app:layout_constraintTop_toBottomOf="@id/txt_id_sign_in" />
-
-    <TextView
-        android:id="@+id/txt_pw_sign_in"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-
-        android:text="@string/txt_pw_sign_in"
-        android:textSize="20sp"
-
-        app:layout_constraintStart_toStartOf="@id/txt_id_sign_in"
-        app:layout_constraintTop_toBottomOf="@id/et_id_sign_in" />
-
-    <EditText
-        android:id="@+id/et_pw_sign_in"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/block_sign_in_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
+        android:layout_marginTop="40dp"
         android:layout_marginHorizontal="25dp"
-        android:layout_marginTop="10dp"
 
-        android:background="@drawable/et_sign_in"
+        android:background="@drawable/block_sign_in_corner"
+        app:layout_constraintTop_toBottomOf="@id/txt_sign_in"
 
-        app:layout_constraintStart_toStartOf="@id/txt_pw_sign_in"
-        app:layout_constraintTop_toBottomOf="@id/txt_pw_sign_in" />
+        >
+
+        <TextView
+            android:id="@+id/txt_sign_in_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="5dp"
+
+            android:text="이메일 입력 example@gmail.com"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_id_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+
+            android:paddingBottom="10dp"
+            android:background="@drawable/et_sign_in"
+            android:hint="anv"
+            android:textSize="20sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_sign_in_id" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/block_sign_in_pw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="25dp"
+
+        android:background="@drawable/block_sign_in_corner"
+        app:layout_constraintTop_toBottomOf="@id/block_sign_in_id"
+
+        >
+
+        <TextView
+            android:id="@+id/txt_sign_in_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="5dp"
+
+            android:text="이메일 입력 example@gmail.com"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_pw_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+
+            android:paddingBottom="10dp"
+            android:background="@drawable/et_sign_in"
+            android:hint="anv"
+            android:textSize="20sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_sign_in_pw" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/btn_sign_in"
@@ -74,10 +109,11 @@
 
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="60dp"
+        android:paddingVertical="20dp"
 
         android:text="@string/btn_sign_in"
 
-        app:layout_constraintTop_toBottomOf="@id/et_pw_sign_in" />
+        app:layout_constraintTop_toBottomOf="@id/block_sign_in_pw" />
 
     <Button
         android:id="@+id/btn_sign_up"
@@ -85,8 +121,10 @@
         android:layout_height="wrap_content"
 
         android:layout_marginHorizontal="30dp"
+
         android:layout_marginTop="15dp"
-        android:text="@string/btn_sign_up"
+        android:background="@drawable/btn_empty_color_sign_in"
+        android:text="@string/btn_find_passwrod"
 
         app:layout_constraintTop_toBottomOf="@id/btn_sign_in" />
 

@@ -3,5 +3,6 @@
     <string name="txt_id_sign_in">아이디</string>
     <string name="txt_pw_sign_in">비밀번호</string>
     <string name="btn_sign_in">로그인</string>
-    <string name="btn_sign_up">회원가입</string>
+    <string name="btn_find_passwrod">비밀번호를 잊으셨나요?</string>
+    <string name="txt_sign_in">로그인</string>
 </resources>
