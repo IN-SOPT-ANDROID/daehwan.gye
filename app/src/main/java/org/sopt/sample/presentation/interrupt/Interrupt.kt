@@ -5,10 +5,8 @@ interface Interrupt<RESULT> {
 
     fun async(): Unit
 
-    data class Result<RESULT>(
-        val status: Int,
-        val detail: RESULT
-    ) {
-        fun isSucceed() = status == 200
+    interface Result<RESULT> {
+        fun get(): RESULT
+        fun isSucceed(): Boolean
     }
 }

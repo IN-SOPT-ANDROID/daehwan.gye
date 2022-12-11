@@ -5,7 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import org.sopt.sample.R
 import org.sopt.sample.databinding.ActivitySignInBinding
-import org.sopt.sample.presentation.interrupt.greet.SignInInterrupt
+import org.sopt.sample.presentation.interrupt.greet.SignInNetworkInterrupt
 
 class SignInActivity : AppCompatActivity() {
 
@@ -18,7 +18,7 @@ class SignInActivity : AppCompatActivity() {
 
         // 로그인 버튼 클릭 시
         binding.btnSignIn.setOnClickListener {
-            val result = SignInInterrupt(
+            val result = SignInNetworkInterrupt(
                 id = findViewById(R.id.et_id_sign_in),
                 pw = findViewById(R.id.et_pw_sign_in)
             ).sync()
@@ -40,8 +40,6 @@ class SignInActivity : AppCompatActivity() {
             // val toSignUpView = Intent(this, SignUpActivity::class.java)
             // startActivity(toSignUpView)
         }
-
-
     }
 
 
