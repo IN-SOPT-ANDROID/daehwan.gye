@@ -5,4 +5,5 @@
     <string name="btn_sign_in">로그인</string>
     <string name="btn_find_passwrod">비밀번호를 잊으셨나요?</string>
     <string name="txt_sign_in">로그인</string>
+    <string name="txt_splash_introducing">내 일상에 스미는 외국어,</string>
 </resources>
